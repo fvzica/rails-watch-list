@@ -1,10 +1,17 @@
-<h1>Name of list</h1>
 
  <li>Lista:  <%= @list.name %> </li>
+   <div class="cards">
  <% @list.movies.each do |movie| %>
-  <li> Movies: <%= movie.title %></li>
+
+ <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
+
   <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-<li> Comments: <%= bookmark.comment %></li>
+    <div class="card-product-infos">
+    <h2><%= movie.title %></h2>
+     <p> Comments: <%= bookmark.comment %> </p>
+  </div>
+</div>
+
 <% end %>
-<%= link_to 'Add movie', new_list_bookmark_path(@list)%>
-<%= link_to 'Back', lists_path %>
+<p><%= link_to 'Add movie', new_list_bookmark_path(@list)%></p>
+<p> <%= link_to 'Back', lists_path %> </p>
