@@ -7,6 +7,7 @@ gem "font-awesome-sass", "~> 5.15"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "faker"
 gem "open-uri"
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
